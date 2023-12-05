@@ -1,0 +1,18 @@
+%{
+#include <stdio.h>
+%}
+
+%%
+xxa*bb {
+    printf("Cadena valida: %s\n", yytext);
+}
+.|\n {
+    printf("Cadena no valida: %s\n", yytext);
+}
+
+%%
+int main() {
+    yylex();
+    return 0;
+}
+
